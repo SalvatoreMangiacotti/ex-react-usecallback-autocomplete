@@ -18,7 +18,6 @@ function App() {
   const [suggestions, setSuggestion] = useState([]);
 
 
-
   const eseguiFetch = useCallback(debounce((query) => {
     fetch(`http://localhost:3333/products?search=${query}`)
       .then(res => res.json())
@@ -28,7 +27,6 @@ function App() {
   }, 300), [])
 
 
-
   useEffect(() => {
     if (!query.trim()) {
       setSuggestion([]);
@@ -36,7 +34,6 @@ function App() {
     }
     eseguiFetch(query)
   }, [query])
-
 
 
   return (
